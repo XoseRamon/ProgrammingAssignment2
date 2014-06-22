@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The general idea is to build a Matrix that caches its own inverse
+## To do so we rely on two functions: makeCacheMatrix and cacheSolve
 
-## Write a short comment describing this function
+## makeCacheMatrix
+# wraps over a given matrix (x), which can be modified and obtained
+# through the get and set functions
+# Provides the methods getInverse and setInverse to get and set the 
+# inverse of the contained matrix
 
 makeCacheMatrix <- function(x = matrix()) {
       m <- NULL
@@ -18,7 +22,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve
+# receives as a parameter a 'wrapped' matrix with makeCacheMatrix and
+# returns its inverse. If the matrix has not its inverse stored, also 
+# calculates it and stores it.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
